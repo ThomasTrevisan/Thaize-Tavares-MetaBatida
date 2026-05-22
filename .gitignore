@@ -1,0 +1,18 @@
+# Material de pesquisa e briefing (não vai pro site público)
+*.csv
+*.pdf
+BRIEFING.md
+DEPLOY.md
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Backups
+*.bak
+*.tmp
