@@ -898,6 +898,15 @@ vturb-smartplayer video {
   color: var(--peach-dark);
   font-size: 13px;
   font-family: 'Fraunces', serif;
+  position: relative;
+  overflow: hidden;
+}
+.bonus-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 16px;
 }
 
 /* ================= BIO ================= */
@@ -1136,21 +1145,21 @@ vturb-smartplayer video {
 }
 .offer-price {
   font-family: 'Fraunces', serif;
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: -0.015em;
-  color: var(--text-cream);
+  color: var(--peach-bright);
   line-height: 1;
   margin-bottom: 6px;
 }
-.offer-price .currency { font-family: 'DM Sans', sans-serif; font-size: 22px; vertical-align: top; line-height: 1; margin-right: 4px; color: var(--peach); font-weight: 600; letter-spacing: 0; }
-.offer-price .integer { font-size: clamp(96px, 16vw, 120px); }
-.offer-price .decimals { font-family: 'DM Sans', sans-serif; font-size: 28px; vertical-align: top; color: var(--text-cream-dim); font-weight: 400; }
+.offer-price .currency { font-family: 'DM Sans', sans-serif; font-size: 28px; vertical-align: top; line-height: 1; margin-right: 8px; color: var(--text-cream); font-weight: 700; letter-spacing: 0; }
+.offer-price .integer { font-size: clamp(96px, 16vw, 120px); color: var(--peach-bright); font-weight: 700; }
+.offer-price .decimals { font-family: 'DM Sans', sans-serif; font-size: 36px; vertical-align: top; color: var(--peach-bright); font-weight: 700; }
 .offer-price-installments {
   font-size: 14.5px;
   color: var(--text-cream-dim);
-  margin-top: 8px;
+  margin-top: 10px;
+  font-weight: 400;
 }
-.offer-price-installments strong { color: var(--text-cream); font-weight: 600; }
 
 .offer-card .cta {
   width: 100%;
@@ -1912,27 +1921,24 @@ vturb-smartplayer video {
 
     <div class="bonuses-grid">
       <div class="bonus-card">
-        <div class="bonus-media">imagem bônus 01</div>
+        <div class="bonus-media"><img src="/img/bonus-sam.webp" alt="Sam, sua IA de vendas" width="1365" height="1151" loading="lazy"></div>
         <div class="bonus-tag">Bônus 01</div>
-        <span class="bonus-roman">i</span>
         <h3 class="bonus-title">Sam, sua IA exclusiva de vendas</h3>
         <p class="bonus-text">Você descreve seu negócio e a Sam te diz exatamente como aplicar o método no seu caso. É como ter a Thaize do seu lado, te dizendo o que fazer sempre que precisar.</p>
         <span class="bonus-strike"><span class="price">R$ 497</span><span class="free">GRÁTIS</span></span>
       </div>
 
       <div class="bonus-card">
-        <div class="bonus-media">imagem bônus 02</div>
+        <div class="bonus-media"><img src="/img/bonus-ebook.webp" alt="Guia das Objeções Universais" width="1024" height="1536" loading="lazy"></div>
         <div class="bonus-tag">Bônus 02</div>
-        <span class="bonus-roman">ii</span>
         <h3 class="bonus-title">Guia Completo de Objeções</h3>
         <p class="bonus-text">Respostas prontas pra <em>"tá caro"</em>, <em>"vou pensar"</em>, <em>"preciso falar com meu marido"</em>, <em>"vi mais barato"</em>. Você nunca mais trava. É só abrir, copiar e mandar.</p>
         <span class="bonus-strike"><span class="price">R$ 297</span><span class="free">GRÁTIS</span></span>
       </div>
 
       <div class="bonus-card">
-        <div class="bonus-media">imagem bônus 03</div>
+        <div class="bonus-media"><img src="/img/bonus-suporte.webp" alt="Suporte direto por 15 dias" width="1365" height="1151" loading="lazy"></div>
         <div class="bonus-tag">Bônus 03</div>
-        <span class="bonus-roman">iii</span>
         <h3 class="bonus-title">Suporte direto por 15 dias</h3>
         <p class="bonus-text">Meu time inteiro à sua disposição nos primeiros 15 dias pra tirar qualquer dúvida e te acompanhar enquanto você aplica o método nas suas vendas.</p>
         <span class="bonus-strike"><span class="price">R$ 650</span><span class="free">GRÁTIS</span></span>
@@ -2005,7 +2011,7 @@ vturb-smartplayer video {
         <div class="offer-price">
           <span class="currency">12x</span><span class="integer">19</span><span class="decimals">,90</span>
         </div>
-        <div class="offer-price-installments">ou <strong>R$ 189 à vista</strong> no PIX ou cartão</div>
+        <div class="offer-price-installments">ou R$ 189 à vista</div>
       </div>
 
       <a href="https://pay.hub.la/qcE0S8jSQVdlUrSEYpKr" class="cta cta-large">
