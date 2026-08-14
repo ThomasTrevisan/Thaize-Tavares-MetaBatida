@@ -434,6 +434,7 @@ vturb-smartplayer {
   display: block;
   width: 100%;
   max-width: 400px;
+  aspect-ratio: 9 / 16;
   margin: 0 auto;
   aspect-ratio: 9 / 16;
   position: relative;
@@ -2212,5 +2213,23 @@ vturb-smartplayer video {
 })();
 </script>
 
+<script>
+/* Clique nos botoes de ancora rola ate a oferta e re-confere depois que a pagina
+   assenta (player e imagens carregando empurram o layout e o alvo foge). */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest('a[href$="#oferta"]');
+  if (!a) return;
+  var alvo = document.getElementById("oferta");
+  if (!alvo) return;
+  e.preventDefault();
+  alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+  var tentativas = 0;
+  var confere = setInterval(function () {
+    var topo = alvo.getBoundingClientRect().top;
+    if (Math.abs(topo) > 48) alvo.scrollIntoView({ block: "start" });
+    if (++tentativas >= 4) clearInterval(confere);
+  }, 500);
+});
+</script>
 </body>
 </html>
