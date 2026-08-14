@@ -2223,12 +2223,18 @@ document.addEventListener("click", function (e) {
   if (!alvo) return;
   e.preventDefault();
   alvo.scrollIntoView({ behavior: "smooth", block: "start" });
-  var tentativas = 0;
-  var confere = setInterval(function () {
-    var topo = alvo.getBoundingClientRect().top;
-    if (Math.abs(topo) > 48) alvo.scrollIntoView({ block: "start" });
-    if (++tentativas >= 4) clearInterval(confere);
-  }, 500);
+  /* espera a rolagem PARAR antes de conferir, pra nao cortar a animacao */
+  var parado = null;
+  function aoRolar() {
+    clearTimeout(parado);
+    parado = setTimeout(function () {
+      window.removeEventListener("scroll", aoRolar);
+      var topo = alvo.getBoundingClientRect().top;
+      if (Math.abs(topo) > 80) alvo.scrollIntoView({ block: "start" });
+    }, 180);
+  }
+  window.addEventListener("scroll", aoRolar, { passive: true });
+  setTimeout(function () { window.removeEventListener("scroll", aoRolar); }, 4000);
 });
 </script>
 </body>
